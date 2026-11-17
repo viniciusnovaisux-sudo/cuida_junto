@@ -1,10 +1,10 @@
 import { Check, Clock, Shield, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo-cuida-junto.png'
 import telaHoje from '../assets/tela-hoje.webp'
 import telaPlano from '../assets/tela-plano.webp'
 import Botao from '../components/Botao.jsx'
 import Etiqueta from '../components/Etiqueta.jsx'
+import Marca from '../components/Marca.jsx'
 import PularParaConteudo from '../components/PularParaConteudo.jsx'
 
 const navegacao = [
@@ -117,10 +117,7 @@ export default function LandingPage() {
 
       <header className="border-b border-border-default bg-bg-surface px-6 py-3">
         <div className={`${miolo} flex items-center justify-between gap-4`}>
-          <Link to="/" className="flex items-center gap-2 rounded-md" aria-label="Cuida Junto, página inicial">
-            <img src={logo} alt="" width="48" height="48" className="size-10 md:size-12" />
-            <span className="font-display text-heading font-extrabold whitespace-nowrap text-brand-teal-strong">Cuida Junto</span>
-          </Link>
+          <Marca nomeSoEmTelasMaiores />
           <nav aria-label="Seções da página" className="hidden lg:block">
             <ul className="m-0 flex list-none gap-8 p-0">
               {navegacao.map(({ href, rotulo }) => (
@@ -136,7 +133,7 @@ export default function LandingPage() {
             <Botao para="/entrar" variante="secundario">
               Entrar
             </Botao>
-            <span className="hidden md:block">
+            <span className="hidden min-[360px]:block">
               <Botao para="/criar-conta">Criar conta</Botao>
             </span>
           </div>
@@ -342,10 +339,7 @@ export default function LandingPage() {
         <div className={`${miolo} flex flex-col gap-6`}>
           <div className="flex flex-col gap-6 md:flex-row md:justify-between">
             <div className="flex max-w-sm flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <img src={logo} alt="" width="48" height="48" className="size-10 md:size-12" />
-                <span className="font-display text-heading font-extrabold text-brand-teal-strong">Cuida Junto</span>
-              </div>
+              <Marca comLink={false} />
               <p className="text-text-secondary">
                 Rotina, divisão do cuidado e direitos para quem cuida de um familiar com demência.
               </p>

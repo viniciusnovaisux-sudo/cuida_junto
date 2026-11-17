@@ -1,5 +1,5 @@
-import { Link, Outlet } from 'react-router-dom'
-import logo from '../assets/logo-cuida-junto.png'
+import { Outlet } from 'react-router-dom'
+import Marca from './Marca.jsx'
 import PularParaConteudo from './PularParaConteudo.jsx'
 
 // Estrutura das páginas de entrada e de cadastro: uma coluna, sem navegação do app.
@@ -9,16 +9,7 @@ export default function LayoutSimples() {
       <PularParaConteudo />
       <header className="px-6 pt-6">
         <div className="mx-auto w-full max-w-md">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-3 rounded-md"
-            aria-label="Cuida Junto, página inicial"
-          >
-            <img src={logo} alt="" width="48" height="48" className="size-12" />
-            <span className="font-display text-heading font-extrabold text-brand-teal-strong">
-              Cuida Junto
-            </span>
-          </Link>
+          <Marca />
         </div>
       </header>
       <main
