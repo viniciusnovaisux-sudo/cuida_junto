@@ -34,6 +34,12 @@
   --font-body: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', system-ui, sans-serif;
 
   /* Estilos de texto: tamanho e altura de linha */
+  --text-display-xl: 3.5rem;
+  --text-display-xl--line-height: 4rem;
+  --text-display-l: 2.5rem;
+  --text-display-l--line-height: 3rem;
+  --text-body-large: 1.25rem;
+  --text-body-large--line-height: 1.875rem;
   --text-display: 2rem;
   --text-display--line-height: 2.5rem;
   --text-title: 1.5rem;
