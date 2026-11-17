@@ -1,10 +1,19 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo-cuida-junto.png'
 import BarraDeNavegacao from './BarraDeNavegacao.jsx'
 import PularParaConteudo from './PularParaConteudo.jsx'
+import useSessao from '../hooks/useSessao.js'
 
 // Estrutura das páginas internas: header, nav, main e footer.
 export default function Layout() {
+  const navegar = useNavigate()
+  const { sessao, sair } = useSessao()
+
+  function encerrar() {
+    sair()
+    navegar('/')
+  }
+
   return (
     <div className="flex min-h-dvh flex-col bg-bg-page">
       <PularParaConteudo />
@@ -16,6 +25,22 @@ export default function Layout() {
               Cuida Junto
             </span>
           </Link>
+          {sessao ? (
+            <button
+              type="button"
+              onClick={encerrar}
+              className="ml-auto min-h-12 rounded-full px-4 text-label font-semibold text-brand-teal-strong underline"
+            >
+              Sair
+            </button>
+          ) : (
+            <Link
+              to="/entrar"
+              className="ml-auto inline-flex min-h-12 items-center rounded-full px-4 text-label font-semibold text-brand-teal-strong underline"
+            >
+              Entrar
+            </Link>
+          )}
         </div>
       </header>
       <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col md:flex-row">
