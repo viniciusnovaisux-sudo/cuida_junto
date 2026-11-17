@@ -2,7 +2,7 @@
 
 Protótipo navegável para a Global Solution FIAP 2026, tema CitizenTech.
 
-**Protótipo publicado:** https://cuida-junto-rosy.vercel.app
+**Protótipo publicado:** https://cuida-junto-app.vercel.app
 
 O Cuida Junto ajuda famílias que cuidam de uma pessoa com Alzheimer ou outra demência. Ele organiza a rotina diária, divide as tarefas entre quem pode ajudar e mostra os direitos de quem cuida. Quem chega para ajudar abre o app e sabe o que fazer.
 
@@ -10,7 +10,7 @@ O Cuida Junto ajuda famílias que cuidam de uma pessoa com Alzheimer ou outra de
 
 | Nome | RM |
 | --- | --- |
-| Pamella | RM574747 |
+| Pamella Moraes Rodrigues do Prado | RM574747 |
 | Thais Gomes Viana | RM575002 |
 | Thalita Vidal Molina | RM575661 |
 | Vinicius Novais | RM574576 |
