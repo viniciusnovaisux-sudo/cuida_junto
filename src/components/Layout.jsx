@@ -11,7 +11,7 @@ export default function Layout() {
       <header className="nao-imprimir border-b border-border-default bg-bg-surface">
         <div className="mx-auto flex max-w-5xl items-center gap-3 px-5 py-2">
           <Link to="/" className="flex items-center gap-2 rounded-md" aria-label="Cuida Junto, página inicial">
-            <img src={logo} alt="" width="40" height="40" className="size-10 mix-blend-multiply" />
+            <img src={logo} alt="" width="40" height="40" className="size-10" />
             <span className="font-display text-heading font-extrabold text-brand-teal-strong">
               Cuida Junto
             </span>
