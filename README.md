@@ -2,6 +2,8 @@
 
 Protótipo navegável para a Global Solution FIAP 2026, tema CitizenTech.
 
+**Protótipo publicado:** https://cuida-junto-rosy.vercel.app
+
 O Cuida Junto ajuda famílias que cuidam de uma pessoa com Alzheimer ou outra demência. Ele organiza a rotina diária, divide as tarefas entre quem pode ajudar e mostra os direitos de quem cuida. Quem chega para ajudar abre o app e sabe o que fazer.
 
 ## Integrantes
