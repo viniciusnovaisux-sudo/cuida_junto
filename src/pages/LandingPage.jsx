@@ -112,14 +112,14 @@ function Celular({ imagem, descricao, forma }) {
 
 export default function LandingPage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-bg-page">
+    <div className="flex min-h-dvh flex-col overflow-x-clip bg-bg-page">
       <PularParaConteudo />
 
       <header className="border-b border-border-default bg-bg-surface px-6 py-3">
         <div className={`${miolo} flex items-center justify-between gap-4`}>
           <Link to="/" className="flex items-center gap-2 rounded-md" aria-label="Cuida Junto, página inicial">
             <img src={logo} alt="" width="48" height="48" className="size-10 md:size-12" />
-            <span className="font-display text-heading font-extrabold text-brand-teal-strong">Cuida Junto</span>
+            <span className="font-display text-heading font-extrabold whitespace-nowrap text-brand-teal-strong">Cuida Junto</span>
           </Link>
           <nav aria-label="Seções da página" className="hidden lg:block">
             <ul className="m-0 flex list-none gap-8 p-0">
@@ -136,9 +136,9 @@ export default function LandingPage() {
             <Botao para="/entrar" variante="secundario">
               Entrar
             </Botao>
-            <Botao para="/criar-conta" className="hidden sm:inline-flex">
-              Criar conta
-            </Botao>
+            <span className="hidden md:block">
+              <Botao para="/criar-conta">Criar conta</Botao>
+            </span>
           </div>
         </div>
       </header>

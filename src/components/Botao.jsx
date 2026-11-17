@@ -10,7 +10,7 @@ const estilos = {
 }
 
 const base =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 py-3 text-label font-semibold transition-colors'
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 py-3 text-label font-semibold whitespace-nowrap transition-colors'
 
 // Botão do design system. Vira link quando recebe "para" ou "href".
 export default function Botao({
