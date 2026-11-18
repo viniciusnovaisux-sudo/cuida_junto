@@ -11,7 +11,7 @@ export default function Direitos() {
         descricao="Veja o que existe para ajudar você e a pessoa que você cuida. Toque em um item para saber como buscar."
       />
 
-      <ul className="m-0 flex list-none flex-col gap-3 p-0">
+      <ul className="em-sequencia m-0 flex list-none flex-col gap-3 p-0">
         {direitos.map((d) => (
           <li key={d.id}>
             <details className="group rounded-lg border border-border-default bg-bg-surface">

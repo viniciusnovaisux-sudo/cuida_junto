@@ -17,7 +17,7 @@ function Grupo({ titulo, itens, onMarcar }) {
   return (
     <section className="flex flex-col gap-2">
       <h2 className="text-heading font-bold">{titulo}</h2>
-      <ul className="m-0 flex list-none flex-col gap-2 p-0">
+      <ul className="em-sequencia m-0 flex list-none flex-col gap-2 p-0">
         {itens.map((item) => (
           <ItemDaRotina key={item.id} item={item} onMarcar={onMarcar} />
         ))}

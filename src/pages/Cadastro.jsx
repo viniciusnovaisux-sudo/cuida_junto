@@ -200,7 +200,7 @@ export default function Cadastro() {
     <div className="flex flex-1 flex-col gap-6">
       <span
         aria-hidden="true"
-        className="flex size-22 items-center justify-center rounded-full bg-status-success-soft text-status-success"
+        className="surgir flex size-22 items-center justify-center rounded-full bg-status-success-soft text-status-success"
       >
         <Check size={44} strokeWidth={2.5} />
       </span>
