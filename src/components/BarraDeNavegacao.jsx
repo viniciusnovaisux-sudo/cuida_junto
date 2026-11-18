@@ -1,12 +1,12 @@
-import { ClipboardList, House, Shield, Users } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { ClipboardList, House, Shield, Users } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const abas = [
-  { para: '/hoje', rotulo: 'Hoje', icone: House },
-  { para: '/semana', rotulo: 'Semana', icone: Users },
-  { para: '/plano', rotulo: 'Plano', icone: ClipboardList },
-  { para: '/direitos', rotulo: 'Direitos', icone: Shield },
-]
+  { para: "/hoje", rotulo: "Hoje", icone: House },
+  { para: "/semana", rotulo: "Semana", icone: Users },
+  { para: "/plano", rotulo: "Plano", icone: ClipboardList },
+  { para: "/direitos", rotulo: "Direitos", icone: Shield },
+];
 
 // Barra inferior no celular; lista lateral em telas largas.
 export default function BarraDeNavegacao() {
@@ -23,8 +23,8 @@ export default function BarraDeNavegacao() {
               className={({ isActive }) =>
                 `flex min-h-12 flex-col items-center gap-1 rounded-md px-1 py-2 text-caption font-medium md:flex-row md:gap-3 md:px-3 md:text-label ${
                   isActive
-                    ? 'bg-brand-teal-soft text-brand-teal-strong'
-                    : 'text-text-secondary hover:bg-bg-page'
+                    ? "bg-brand-teal-soft text-brand-teal-strong"
+                    : "text-text-secondary hover:bg-bg-page"
                 }`
               }
             >
@@ -35,5 +35,5 @@ export default function BarraDeNavegacao() {
         ))}
       </ul>
     </nav>
-  )
+  );
 }

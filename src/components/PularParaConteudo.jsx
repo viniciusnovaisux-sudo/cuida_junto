@@ -7,5 +7,5 @@ export default function PularParaConteudo() {
     >
       Pular para o conteúdo
     </a>
-  )
+  );
 }

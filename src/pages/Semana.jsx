@@ -50,7 +50,7 @@ export default function Semana() {
           {pendentes.length ? 'Falta cobrir' : 'Semana coberta'}
         </h2>
         <p className="text-caption font-medium text-text-secondary">{resumo}</p>
-        <ul className="m-0 flex list-none flex-col gap-3 p-0">
+        <ul className="em-sequencia m-0 flex list-none flex-col gap-3 p-0">
           {pendentes.map((tarefa) => (
             <li key={tarefa.id} className="flex items-center gap-3 rounded-md bg-bg-surface p-3">
               <div className="flex min-w-0 flex-1 flex-col">
@@ -72,7 +72,7 @@ export default function Semana() {
 
       <section className="flex flex-col gap-2">
         <h2 className="text-heading font-bold">Quem cuida em cada dia</h2>
-        <ul className="m-0 flex list-none flex-col gap-2 p-0">
+        <ul className="em-sequencia m-0 flex list-none flex-col gap-2 p-0">
           {diasDaSemana.map((d) => {
             const faltam = d.tarefas.filter((id) => !assumidas.includes(id))
             const suas = d.tarefas.filter((id) => assumidas.includes(id))

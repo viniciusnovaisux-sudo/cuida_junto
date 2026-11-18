@@ -1,17 +1,18 @@
-import { Link, Outlet, useNavigate } from 'react-router-dom'
-import BarraDeNavegacao from './BarraDeNavegacao.jsx'
-import Marca from './Marca.jsx'
-import PularParaConteudo from './PularParaConteudo.jsx'
-import useSessao from '../hooks/useSessao.js'
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import BarraDeNavegacao from "./BarraDeNavegacao.jsx";
+import Marca from "./Marca.jsx";
+import PularParaConteudo from "./PularParaConteudo.jsx";
+import useSessao from "../hooks/useSessao.js";
 
 // Estrutura das páginas internas: header, nav, main e footer.
 export default function Layout() {
-  const navegar = useNavigate()
-  const { sessao, sair } = useSessao()
+  const navegar = useNavigate();
+  const { sessao, sair } = useSessao();
+  const { pathname } = useLocation();
 
   function encerrar() {
-    sair()
-    navegar('/')
+    sair();
+    navegar("/");
   }
 
   return (
@@ -40,15 +41,25 @@ export default function Layout() {
       </header>
       <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col md:flex-row">
         <BarraDeNavegacao />
-        <main id="conteudo" tabIndex={-1} className="flex-1 px-5 pt-6 pb-28 md:px-8 md:pb-10">
-          <div className="mx-auto flex max-w-xl flex-col gap-5">
+        <main
+          id="conteudo"
+          tabIndex={-1}
+          className="flex-1 px-5 pt-6 pb-28 md:px-8 md:pb-10"
+        >
+          <div
+            key={pathname}
+            className="entrada mx-auto flex max-w-xl flex-col gap-5"
+          >
             <Outlet />
           </div>
         </main>
       </div>
       <footer className="nao-imprimir hidden border-t border-border-default px-5 py-4 text-center text-caption text-text-secondary md:block">
-        <p>Cuida Junto é um protótipo acadêmico com dados simulados. Global Solution FIAP 2026.</p>
+        <p>
+          Cuida Junto é um protótipo acadêmico com dados simulados. Global
+          Solution FIAP 2026.
+        </p>
       </footer>
     </div>
-  )
+  );
 }

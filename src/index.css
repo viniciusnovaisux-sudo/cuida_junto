@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   Tokens do design system Cuida Junto.
@@ -30,8 +30,9 @@
   --radius-md: 12px;
   --radius-lg: 16px;
 
-  --font-display: 'Nunito', ui-rounded, system-ui, sans-serif;
-  --font-body: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --font-display: "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-body:
+    "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, sans-serif;
 
   /* Estilos de texto: tamanho e altura de linha */
   --text-display-xl: 3.5rem;
@@ -74,6 +75,11 @@
     font-family: var(--font-display);
   }
 
+  /* O cabeçalho da página inicial é fixo: as seções param logo abaixo dele */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   /* Foco sempre visível para quem navega pelo teclado */
   :focus-visible {
     outline: 3px solid var(--color-brand-orange-strong);
@@ -90,10 +96,139 @@
   }
 }
 
+/*
+  Movimento: suave e discreto. Tudo fica dentro de "no-preference",
+  então quem pede menos animação no sistema vê a página parada e completa.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Entrada ao rolar a página (componente Revelar) */
+  .revelar {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--atraso, 0ms);
+  }
+
+  .revelar.visivel {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Entrada do conteúdo ao trocar de página */
+  .entrada {
+    animation: entrar 450ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Itens de lista entram um depois do outro */
+  .em-sequencia > * {
+    animation: entrar 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .em-sequencia > *:nth-child(2) {
+    animation-delay: 60ms;
+  }
+  .em-sequencia > *:nth-child(3) {
+    animation-delay: 120ms;
+  }
+  .em-sequencia > *:nth-child(4) {
+    animation-delay: 180ms;
+  }
+  .em-sequencia > *:nth-child(5) {
+    animation-delay: 240ms;
+  }
+  .em-sequencia > *:nth-child(n + 6) {
+    animation-delay: 300ms;
+  }
+
+  /* Formas decorativas flutuam bem devagar */
+  .flutuar {
+    animation: flutuar 9s ease-in-out infinite;
+  }
+  .flutuar-lento {
+    animation: flutuar 13s ease-in-out infinite reverse;
+  }
+
+  /* Sinal de marcado ou de pronto */
+  .surgir {
+    animation: surgir 420ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  /* Elevação leve ao passar o mouse */
+  .elevar {
+    transition:
+      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .elevar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -16px rgb(28 43 45 / 0.25);
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes flutuar {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Sublinhado que cresce nos links da navegação */
+.link-animado {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition:
+    background-size 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 200ms;
+}
+.link-animado:hover,
+.link-animado:focus-visible {
+  background-size: 100% 2px;
+}
+
 /* Versão para impressão do Plano de hoje */
 @media print {
   .nao-imprimir {
     display: none !important;
+  }
+
+  .revelar,
+  .entrada,
+  .em-sequencia > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 
   html,

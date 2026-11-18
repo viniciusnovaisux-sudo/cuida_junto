@@ -9,10 +9,10 @@ export default function Progresso({ passo, total = 3 }) {
         {Array.from({ length: total }, (_, i) => (
           <span
             key={i}
-            className={`h-2 flex-1 rounded-full ${i < passo ? 'bg-brand-teal-strong' : 'bg-border-default'}`}
+            className={`h-2 flex-1 rounded-full transition-colors duration-500 ${i < passo ? "bg-brand-teal-strong" : "bg-border-default"}`}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
